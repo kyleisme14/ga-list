@@ -22,7 +22,7 @@ class App extends Component {
           <Routes>
             <Route exact path="/" element={<HomePage />} />
             <Route path="/sales" element={<SaleContainer />} />
-            <Route path="/sale" element={<Sale />} />
+            <Route path="/sales/:id" element={<Sale />} />
             <Route path="/postform" element={<PostForm />} />
 
           </Routes>

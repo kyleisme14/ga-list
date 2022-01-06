@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import "./HomePage.css";
+import SaleContainer from "./SaleContainer";
+import { Link } from "react-router-dom";
+
 
 
 class HomePage extends Component {
@@ -44,21 +47,12 @@ class HomePage extends Component {
                         <br />
                         <div id="container2">
                             <div id="container2item">
-                                <h2 id="mainbar">For Sale</h2>
+                                <div id="mainbar">
+                                <Link to="/sales">
+                        <h2>For Sale</h2>
+                    </Link></div>
                                 <div>
-                                    <h4>SALECONTAINER</h4>
-                                    <ul>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                    </ul>
+                                    <SaleContainer />
                                 </div>
                             </div>
 
