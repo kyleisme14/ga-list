@@ -11,6 +11,7 @@ import {
 import Sale from "./components/Sale";
 import SaleContainer from "./components/SaleContainer";
 import HomePage from "./components/HomePage";
+import PostForm from "./components/PostForm";
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route exact path="/" element={<HomePage />} />
             <Route path="/sales" element={<SaleContainer />} />
             <Route path="/sale" element={<Sale />} />
+            <Route path="/postform" element={<PostForm />} />
 
           </Routes>
         </div>
