@@ -20,7 +20,8 @@ class HomePage extends Component {
                     <div id="mainbar" className="Column2">
 
                         <h1>ga-list</h1>
-                        <h3>create a posting</h3>
+                        <Link to="/postform">
+                        <h3>create a posting</h3></Link>
                         <h3>my account</h3>
 
                         <div id="searchbar">
