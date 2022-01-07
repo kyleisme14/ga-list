@@ -1,13 +1,16 @@
-import React, { Component, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import "./SaleContainer.css";
-
-import Sale from "./Sale";
-import { Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Routes,
+  useParams
+} from "react-router-dom";
 
 
 const SaleContainer = () => {
-    const [salePosts, setsalePosts] = useState([
+    const [salePosts] = useState([
         {
             id: 1, title: "Remove feral cats from my basement",
             description: "A bunch of cats have moved into my basement. Please help me get rid of them :) ",
@@ -45,6 +48,8 @@ const SaleContainer = () => {
         },
     ]);
 
+
+
     return (
         <div className="sale-container">
             {salePosts.map((salePost) => (
@@ -60,6 +65,7 @@ const SaleContainer = () => {
     )
 
 }
+
 
 // const displaySales = data.map((a, idx) => {
 //     return (
@@ -121,4 +127,4 @@ const SaleContainer = () => {
 //     }
 // }
 
-export default SaleContainer;
+  export default SaleContainer;
