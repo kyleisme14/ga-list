@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./HomePage.css";
 import SaleContainer from "./SaleContainer";
+import JobContainer from "./JobContainer";
 import { Link } from "react-router-dom";
-
 
 
 class HomePage extends Component {
@@ -48,61 +48,51 @@ class HomePage extends Component {
                         <div id="container2">
                             <div id="container2item">
                                 <div id="mainbar">
-                                <Link to="/sales">
-                        <h2>For Sale</h2>
-                    </Link></div>
+                                    <Link to="/sales">
+                                        <h2>For Sale</h2>
+                                    </Link></div>
                                 <div>
                                     <SaleContainer />
                                 </div>
                             </div>
 
                             <div id="container2item">
-                                <h2 id="mainbar">Jobs</h2>
-                                <div>
-                                    <h4>JOBSCONTAINER</h4>
-                                    <ul>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                    </ul>
-                                </div>
+                                <div id="mainbar"><Link to="/jobs">
+                                    <h2>Jobs</h2>
+                                </Link></div>
+                            <div>
+                                <JobContainer />
                             </div>
+                        </div>
 
-                            <div id="container2item">
-                                <h2 id="mainbar">Forum</h2>
-                                <div>
-                                    <h4>ForumCONTAINER</h4>
-                                    <ul>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                        <li>listing........</li>
-                                    </ul>
-                                </div>
+                        <div id="container2item">
+                            <h2 id="mainbar">Forum</h2>
+                            <div>
+                                <h4>ForumCONTAINER</h4>
+                                <ul>
+                                    <li>listing........</li>
+                                    <li>listing........</li>
+                                    <li>listing........</li>
+                                    <li>listing........</li>
+                                    <li>listing........</li>
+                                    <li>listing........</li>
+                                    <li>listing........</li>
+                                    <li>listing........</li>
+                                    <li>listing........</li>
+                                    <li>listing........</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div id="background" className="column4">
-
-                    </div>
+                <div id="background" className="column4">
 
                 </div>
 
             </div>
+
+            </div >
         );
     }
 }
