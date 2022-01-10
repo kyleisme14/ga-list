@@ -9,6 +9,7 @@ class PostForm extends Component {
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
+    
   
     handleChange(event) {
       this.setState({value: event.target.value});
@@ -46,7 +47,7 @@ class PostForm extends Component {
                   </label> <br/></div>
                   <div><label>
                       Description
-                      <br/><input type="text" name="Description" value={this.description} onChange={this.handleDescription}/>
+                      <br/><input id="description" type="text" name="Description" value={this.description} onChange={this.handleDescription}/>
                   </label> <br/></div>
                   <div><label>
                       Price
