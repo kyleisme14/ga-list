@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./SaleContainer.css";
 import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Routes,
-  useParams
+    BrowserRouter as Router,
+    Link,
+    Route,
+    Routes,
+    useParams
 } from "react-router-dom";
 
 
@@ -51,17 +51,18 @@ const SaleContainer = () => {
 
 
     return (
-        <div className="sale-container">
-            {salePosts.map((salePost) => (
-                <div className="post-preview" key={salePost.id}>
-                    <Link to={`/sales/${salePost.id}`}>
-                        <h2>{salePost.title}</h2>
-                        <p>{salePost.price}, {salePost.location}</p>
-                    </Link>
-                </div>
 
-            ))}
-        </div>
+            <div className="sale-container">
+                {salePosts.map((salePost) => (
+                    <div className="post-preview" key={salePost.id}>
+                        <Link to={`/sales/${salePost.id}`}>
+                            <h2>{salePost.title}</h2>
+                            <p>{salePost.price}, {salePost.location}</p>
+                        </Link>
+                    </div>
+
+                ))}
+            </div>
     )
 
 }
@@ -127,4 +128,4 @@ const SaleContainer = () => {
 //     }
 // }
 
-  export default SaleContainer;
+export default SaleContainer;

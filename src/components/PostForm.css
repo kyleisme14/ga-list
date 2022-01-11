@@ -1,3 +1,10 @@
 #description{
     width: 100%; height: 25%; border: 1px solid #999999; padding: 5px; 
 }
+#regularImput{
+    font-size:14pt;
+
+}
+#bigImput{
+    height: 300px;;
+}

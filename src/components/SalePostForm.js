@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 const { REACT_APP_SERVER_URL } = process.env;
 
 
-class JobPostForm extends Component {
+class SalePostForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,13 +44,13 @@ class JobPostForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const newJob = {
-            title: this.state.title,
+            title: this.state.name,
             description: this.state.description,
             post_text: this.state.post_text,
             username: this.state.username,
         };
         axios
-            .post(`${REACT_APP_SERVER_URL}/jobs/new`, newJob)
+            .post(`${REACT_APP_SERVER_URL}/sales/new`, newJob)
             .then((response) => {
                 this.setState({
                     redirect: true,
@@ -61,11 +61,11 @@ class JobPostForm extends Component {
 
 
     render() {
-        if (this.state.redirect) return <Redirect to="/jobs" />; // You can have them redirected to profile (your choice)
+        if (this.state.redirect) return <Redirect to="/sales" />; // You can have them redirected to profile (your choice)
         
         return (
             <div>
-                <h1>Job Post Form</h1>
+                <p>Sale Post Form</p>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <div>
                         <label>
@@ -112,4 +112,4 @@ class JobPostForm extends Component {
 
 
 
-export default JobPostForm;
+export default SalePostForm;
