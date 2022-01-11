@@ -20,11 +20,11 @@ import JobContainer from "./components/JobContainer";
 import HomePage from "./components/HomePage";
 import PostForm from "./components/PostForm";
 
-const PrivateRoute = ({ component: Component, ...rest}) => {
+const PrivateRoute = ({ component: Component, ...rest }) => {
   let token = localStorage.getItem('jwtToken');
   // console.log('===> Hitting a Private Route');
   return <Route {...rest} render={(props) => {
-    return token ? <Component {...rest} {...props} /> : <Redirect to="/login"/>
+    return token ? <Component {...rest} {...props} /> : <Redirect to="/login" />
   }} />
 }
 
@@ -55,10 +55,10 @@ function App() {
 
   const handleLogout = () => {
     if (localStorage.getItem('jwtToken')) {
-        // remove token for localStorage
-        localStorage.removeItem('jwtToken');
-        setCurrentUser(null);
-        setIsAuthenticated(false);
+      // remove token for localStorage
+      localStorage.removeItem('jwtToken');
+      setCurrentUser(null);
+      setIsAuthenticated(false);
     }
   }
 
@@ -68,9 +68,9 @@ function App() {
       <div className="container mt-5">
         <Switch>
           <Route path='/signup' component={Signup} />
-          <Route 
+          <Route
             path="/login"
-            render={(props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>}
+            render={(props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} />}
           />
           <PrivateRoute path="/profile" component={Profile} user={currentUser} handleLogout={handleLogout} />
           <Route exact path="/" component={HomePage} />
