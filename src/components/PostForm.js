@@ -1,77 +1,123 @@
-import React, { Component } from "react";
 import "./PostForm.css";
+import React, { Component } from "react";
+import axios from "axios";
+import { Redirect } from "react-router-dom";
 
-class PostForm extends Component {
+const { REACT_APP_SERVER_URL } = process.env;
+
+
+class JobPostForm extends Component {
     constructor(props) {
-      super(props);
-      this.state = {value: ''};
-  
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+        super(props);
+        this.state = {
+            title: "",
+            description: "",
+            post_text: "",
+        };
     }
-    
-  
-    handleChange(event) {
-      this.setState({value: event.target.value});
+    handleTitle(e) {
+        this.setState({
+            title: e.target.value,
+        });
     }
-  
-    handleSubmit(){
-      let databody = {
-          "title": this.state.title,
-          "description": this.state.description,
-          "price": this.state.price,
-          "contact_info": this.state.contact_info,
-          "location": this.state.location,
-          "Image": this.state.image_url,
-      }
-  
-      return fetch('http://localhost:5002/stored', {
-          method: 'POST',
-          body: JSON.stringify(databody),
-          headers: {
-              'Content-Type': 'application/json'
-          },
-      })
-      .then(res => res.json())
-      .then(data => console.log(data)); 
-  }
-  
-  
-  render(){
-      return (
-          <div>
-              <form onSubmit={this.handleSubmit}>
-                  <div><label>
-                      Title
-                      <br/><input type="text" name="Title" value={this.title} onChange={this.handleTitle}/>
-                  </label> <br/></div>
-                  <div><label>
-                      Description
-                      <br/><input id="description" type="text" name="Description" value={this.description} onChange={this.handleDescription}/>
-                  </label> <br/></div>
-                  <div><label>
-                      Price
-                      <br/><input type="text" name="Price" value={this.price} onChange={this.handlePrice}/>
-                  </label> <br/></div>
-                  <div><label>
-                      Contact Info
-                      <br/><input type="text" name="Contact_info" value={this.contact_info} onChange={this.handleContact_info}/>
-                  </label> <br/></div>
-                  <div><label>
-                      Location
-                      <br/><input type="text" name="Location" value={this.location} onChange={this.handleLocation}/>
-                  </label> <br/></div>
-                  <div><label>
-                      Image
-                      <br/> <input type="text" name="Image_url" value={this.image_url} onChange={this.handleImage_url}/>
-                  </label> <br/></div>
-                  <input type="submit" value="Submit Post" />
-              </form> 
-          </div>
-      );
-  }
-  }
-  
+    handleDescription(e) {
+        this.setState({
+            description: e.target.value,
+        });
+    }
+    handlePayment(e) {
+        this.setState({
+            post_text: e.target.value,
+        });
+    }
+    handleContact_info(e) {
+        this.setState({
+            contact_info: e.target.value,
+        });
+    }
+    handleLocation(e) {
+        this.setState({
+            location: e.target.value,
+        });
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const newJob = {
+            title: this.state.title,
+            description: this.state.description,
+            payment: this.state.payment,
+        };
+        axios
+            .post(`${REACT_APP_SERVER_URL}/jobs/new`, newJob)
+            .then((response) => {
+                this.setState({
+                    redirect: true,
+                });
+            })
+            .catch((error) => console.log("===> Error in Form", error));
+    };
 
 
-export default PostForm;
+    render() {
+        if (this.state.redirect) return <Redirect to="/jobs" />; // You can have them redirected to profile (your choice)
+        
+        return (
+            <div>
+                <p>hello</p>
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <div>
+                        <label>
+                            Title
+                            <br />
+                            <input type="text" name="Title"
+                                value={this.state.title} onChange={this.handleTitle.bind(this)} />
+                        </label>
+                        <br />
+                    </div>
+                    <div>
+                        <label>
+                            Description
+                            <br />
+                            <input id="description" type="text" name="Description"
+                                value={this.state.description} onChange={this.handleDescription.bind(this)} />
+                        </label>
+                        <br />
+                    </div>
+                    <div>
+                        <label>
+                            Payment
+                            <br />
+                            <input type="text" name="Price"
+                                value={this.state.payment} onChange={this.handlePayment.bind(this)} />
+                        </label>
+                        <br />
+                    </div>
+                    <div>
+                        <label>
+                            Contact
+                            <br />
+                            <input type="text" name="Contact_info"
+                                value={this.state.contact_info} onChange={this.handleContact_info.bind(this)} />
+                        </label>
+                        <br />
+                    </div>
+                    <div>
+                        <label>
+                            Location
+                            <br />
+                            <input type="text" name="location"
+                                value={this.state.location} onChange={this.handleLocation.bind(this)} />
+                        </label>
+                        <br />
+                    </div>
+                    <input type="submit" value="Submit Post" />
+                </form>
+            </div>
+        );
+    }
+};
+
+
+
+export default JobPostForm;
