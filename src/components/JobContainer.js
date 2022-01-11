@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './JobContainer.css';
 import Job from './Job';
+import { Redirect } from 'react-router-dom'
 
 
 
@@ -27,6 +28,10 @@ class JobContainer extends Component {
             })
     }
 
+
+
+
+
     displayJobs() {
         const display = this.state.data.map((a, idx) => {
             return <Job
@@ -43,9 +48,17 @@ class JobContainer extends Component {
         return display;
     }
 
+    addJob = () => {
+        this.setState({
+            redirect: true
+        })
+    }
+
     render() {
         return (
             <div>
+                <button onClick={this.addJob}>Create a new Job</button>
+                {this.state.redirect && <Redirect to="/postform" />}
                 {this.displayJobs()}
 
             </div>

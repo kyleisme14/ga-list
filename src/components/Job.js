@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from "react-router-dom";
 
 class Job extends Component {
   constructor(props) {
@@ -7,9 +7,22 @@ class Job extends Component {
 
   }
 
+  addJob() {
+    <Link to='/postform'></Link>
+  }
+
   render() {
     return (
+
+
       <div>
+        <div>
+
+          <Link to="/postform">
+            <h3>Create a new job</h3></Link>
+        </div>
+
+
         <h3>Title:</h3>
         {this.props.title}
         <br />
@@ -24,12 +37,6 @@ class Job extends Component {
         <br />
         <h3>Location:</h3>
         {this.props.location}
-
-
-
-
-
-
 
       </div>
     )
