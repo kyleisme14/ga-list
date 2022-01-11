@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 const { REACT_APP_SERVER_URL } = process.env;
 
 
-class JobPostForm extends Component {
+class ForumPostForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -50,7 +50,7 @@ class JobPostForm extends Component {
             username: this.state.username,
         };
         axios
-            .post(`${REACT_APP_SERVER_URL}/jobs/new`, newJob)
+            .post(`${REACT_APP_SERVER_URL}/forums/new`, newJob)
             .then((response) => {
                 this.setState({
                     redirect: true,
@@ -59,13 +59,14 @@ class JobPostForm extends Component {
             .catch((error) => console.log("===> Error in Form", error));
     };
 
+ 
 
     render() {
-        if (this.state.redirect) return <Redirect to="/jobs" />; // You can have them redirected to profile (your choice)
+        if (this.state.redirect) return <Redirect to="/sales" />; // You can have them redirected to profile (your choice)
         
         return (
             <div>
-                <h1>Job Post Form</h1>
+                <p>Forum Post Form</p>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <div>
                         <label>
@@ -77,17 +78,17 @@ class JobPostForm extends Component {
                         <br />
                     </div>
                     <div>
-                        <label>
-                            Description
+                        <label id="bigImput">
+                            Post
                             <br />
-                            <input id="description" type="text" name="Description"
+                            <input  placeholder="What are your thoughts?" id="description" type="text" name="Description"
                                 value={this.state.description} onChange={this.handleDescription.bind(this)} />
                         </label>
                         <br />
                     </div>
                     <div>
                         <label>
-                            Payment
+                            Location
                             <br />
                             <input type="text" name="Price"
                                 value={this.state.post_text} onChange={this.handlePayment.bind(this)} />
@@ -95,14 +96,10 @@ class JobPostForm extends Component {
                         <br />
                     </div>
                     <div>
-                        <label>
-                            Contact
-                            <br />
-                            <input type="text" name="Contact_info"
-                                value={this.state.username} onChange={this.handleContact_info.bind(this)} />
-                        </label>
+                
                         <br />
                     </div>
+                    
                     <input type="submit" value="Submit Post" />
                 </form>
             </div>
@@ -112,4 +109,4 @@ class JobPostForm extends Component {
 
 
 
-export default JobPostForm;
+export default ForumPostForm;

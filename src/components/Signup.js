@@ -76,20 +76,19 @@ class Signup extends Component {
             <div className="column is-8 is-offset-2 register">
               <div className="columns">
                 <div className="column left">
-                  <h1 className="title is-1">Super Cool Website</h1>
+                  <h1 className="title is-1">GA-List</h1>
                   <h2 className="subtitle colored is-4">
-                    Lorem ipsum dolor sit amet.
+                    Where all the people in the world can post jobs and things for sale.
                   </h2>
                   <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Corporis ex deleniti aliquam tempora libero excepturi vero
-                    soluta odio optio sed.
+                    Probably only going to be used by the few people we show this craigslist clone. So consider yourself lucky! 
                   </p>
                 </div>
                 <div className="column right has-text-centered">
                   <h1 className="title is-4">Sign up today</h1>
                   <p className="description">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit
+                    You only need to sign in if you actually want to make posts that are connected to your user data.
+
                   </p>
                   <form onSubmit={this.handleSubmit.bind(this)}>
                     <div className="field">
@@ -153,7 +152,7 @@ class Signup extends Component {
                     </button>
                     <br />
                     <small>
-                      <em>Lorem ipsum dolor sit amet consectetur.</em>
+                      <em>We don't promise anything.</em>
                     </small>
                   </form>
                 </div>
