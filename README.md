@@ -1,11 +1,9 @@
 # ga-list
 
-
 ## Purpose of this application
 To serve as a marketplace to buy, sell and enteract with the community. 
 
 <!-- ## How does it work? -->
-
 
 ## Necessary Deliverables:
 - A working app, built by the whole team, hosted somewhere on the internet
@@ -21,25 +19,20 @@ Installation instructions for any dependencies
 - Descriptions of any unsolved problems or major hurdles your team had to overcome.
 
 
-
 <!-- ## Screenshots -->
 
 ## Explanations of the technologies used
 This was built using the MERN stack.
 
-
 <!-- ## A couple paragraphs about the general approach you took -->
 
 
-
 ## ERD & WIREFRAME
-
 
 ![Wireframe HomePage](./img/wireframehome.png)
 ![Wireframe Sales](./img/salespagewire.png)
 ![ERD](./img/crud.png)
 ![CRUD](./img/cruderd.png/)
-
 
 ## USER STORIES
 ### As a user I want to...
@@ -54,7 +47,6 @@ This was built using the MERN stack.
 - Why:  -->
 
 <!-- ## Code Snippets -->
-
 
 <!-- ## Descriptions of any unsolved problems or major hurdles your team had to overcome. -->
 
@@ -81,7 +73,6 @@ Link to your user stories – who are your users, what do they want, and why?
 
 Link to your wireframes – sketches of major views / interfaces in your application
 
-
 Descriptions of any unsolved problems or major hurdles your team had to overcome.
 
 PROBLEMS/BLOCKERS:
@@ -89,7 +80,6 @@ PROBLEMS/BLOCKERS:
 Figuring out efficient schemas
 Careful planning
 Communicating between front end and backend 
-
 
 
 Installation instructions for any dependencies
@@ -139,7 +129,6 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
 
 APP Breakdown
 
@@ -313,7 +302,6 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   }} />
 }
 
-
 function App() {
   // Set state values
   const [currentUser, setCurrentUser] = useState('');
@@ -376,3 +364,4 @@ function App() {
 export default App;
 
 ```
+

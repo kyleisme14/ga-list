@@ -8,7 +8,6 @@ import {
     useParams
 } from "react-router-dom";
 
-
 const SaleDisplay = () => {
     const [salePosts] = useState([
         {
@@ -49,7 +48,6 @@ const SaleDisplay = () => {
     ]);
 
 
-
     return (
 
             <div className="sale-container">
@@ -66,7 +64,6 @@ const SaleDisplay = () => {
     )
 
 }
-
 
 // const displaySales = data.map((a, idx) => {
 //     return (
@@ -116,7 +113,6 @@ const SaleDisplay = () => {
 
 //         return display;
 //     }
-
 
 //     render() {
 //         return (

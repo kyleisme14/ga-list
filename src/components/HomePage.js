@@ -5,7 +5,6 @@ import SaleDisplay from "./SaleDisplay";
 import JobContainer from "./JobContainer";
 import { Link } from "react-router-dom";
 
-
 class HomePage extends Component {
     render() {
         return (
@@ -20,7 +19,6 @@ class HomePage extends Component {
 
                     <div id="mainbar" className="Column2">
                         <br />
-
 
                         <Link to="/jobpostform">
                             <h3>create a Job Post</h3></Link>
@@ -49,7 +47,6 @@ class HomePage extends Component {
                         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">avoid scams</a>
 
                     </div>
-
 
 
                     <div id="column3">
@@ -87,7 +84,6 @@ class HomePage extends Component {
                                     </ul>
                                 </div>
                             </div>
-
 
                         </div>
                         <div id="container2item">
