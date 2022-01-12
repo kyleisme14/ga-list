@@ -1,5 +1,12 @@
 # GA-LIST Frontend
 
+##### Table of Contents  
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+...snip...    
+<a name="headers"/>
+## Headers
+
 | Components | Links to Code | Description |
 | --- | --- | --- |
 | `App`| [`App`](https://github.com/SEI-1025/mern-authentication-frontend#app-component) | The component that manages the entire app |
