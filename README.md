@@ -8,7 +8,8 @@
 | `Navbar`| [`Navbar`](https://github.com/SEI-1025/mern-authentication-frontend/blob/main/docs/navbar.md) | A navbar that displays the links based on if the user is logged in or not |
 | `Profile`| [`Profile`](https://github.com/SEI-1025/mern-authentication-frontend/blob/main/docs/profile.md) | A component that displays the user profile information |
 | `setAuthToken`| [`setAuthToken`](https://github.com/SEI-1025/mern-authentication-frontend/blob/main/docs/setAuthToken.md) | A utility function that adds a token to the `Authentication` header to manage current user |
-| `About`| [`About`](https://github.com/SEI-1025/mern-authentication-frontend/blob/main/docs/other-components.md#about) | A component that decribes the app |
+| `Post Form`| [`PostForm`](https://github.com/kyleisme14/ga-list/blob/main/src/components/PostForm.js) | A component that allows posting to the database. |
+| `Jobs`| [`JobsContainer`](https://github.com/kyleisme14/ga-list/blob/main/src/components/JobContainer.js) | A component displays the jobs from the database. |
 | `Footer`| [`Footer`](https://github.com/SEI-1025/mern-authentication-frontend/blob/main/docs/other-components.md#footer) | A footer that goes on each component |
 | `Welcome`| [`Welcome`](https://github.com/SEI-1025/mern-authentication-frontend/blob/main/docs/other-components.md#welcome) | A welcome page for the user |
 
