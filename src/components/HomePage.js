@@ -94,7 +94,21 @@ class HomePage extends Component {
                                 <h2>Jobs</h2>
                             </Link></div>
                             <div>
-                                <JobContainer />
+                                <h4></h4>
+                                <ul id="container2">
+                                    <li><a href="http://localhost:3001/jobs">accounting</a></li>
+                                    <li><a href="http://localhost:3001/jobs">admin</a></li>
+                                    <li><a href="http://localhost:3001/jobs">software</a></li>
+                                    <li><a href="http://localhost:3001/jobs">food</a></li>
+                                    <li><a href="http://localhost:3001/jobs">media</a></li>
+                                    <li><a href="http://localhost:3001/jobs">transport</a></li>
+                                    <li><a href="http://localhost:3001/jobs">security</a></li>
+                                    <li><a href="http://localhost:3001/jobs">real estate</a></li>
+                                    <li><a href="http://localhost:3001/jobs">education</a></li>
+                                    <li><a href="http://localhost:3001/jobs">government</a></li>
+
+                                </ul>
+                                {/* <JobContainer /> */}
                             </div>
                         </div>
                     </div>
