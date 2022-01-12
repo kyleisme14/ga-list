@@ -63,7 +63,32 @@ class HomePage extends Component {
                                         <h2>For Sale</h2>
                                     </Link></div>
                                 <div>
-                                    <SaleContainer />
+                                    <h4></h4>
+                                    <ul id="container2">
+                                        <li><a href="http://localhost:3001/sales">cars</a></li>
+                                        <li><a href="http://localhost:3001/sales">bike</a></li>
+                                        <li><a href="http://localhost:3001/sales">cell phones</a></li>
+                                        <li><a href="http://localhost:3001/sales">computer parts</a></li>
+                                        <li><a href="http://localhost:3001/sales">furniture</a></li>
+                                        <li><a href="http://localhost:3001/sales">general</a></li>
+                                        <li><a href="http://localhost:3001/sales">materials</a></li>
+                                        <li><a href="http://localhost:3001/sales">jewelry</a></li>
+                                        <li><a href="http://localhost:3001/sales">music</a></li>
+                                        <li><a href="http://localhost:3001/sales">sporting</a></li>
+                                        <li><a href="http://localhost:3001/sales">household</a></li>
+                                        <li><a href="http://localhost:3001/sales">video</a></li>
+                                        <li><a href="http://localhost:3001/sales">toys</a></li>
+                                        <li><a href="http://localhost:3001/sales">garage sale</a></li>
+                                        <li><a href="http://localhost:3001/sales">electronics</a></li>
+                                        <li><a href="http://localhost:3001/sales">tickets</a></li>
+                                        <li><a href="http://localhost:3001/sales">farm</a></li>
+
+
+                                    </ul>
+                                    {/* <JobContainer /> */}
+                                </div>
+                                <div>
+
                                 </div>
                             </div>
 
@@ -106,6 +131,13 @@ class HomePage extends Component {
                                     <li><a href="http://localhost:3001/jobs">real estate</a></li>
                                     <li><a href="http://localhost:3001/jobs">education</a></li>
                                     <li><a href="http://localhost:3001/jobs">government</a></li>
+                                    <li><a href="http://localhost:3001/jobs">skilled trade</a></li>
+                                    <li><a href="http://localhost:3001/jobs">nonprofit sector</a></li>
+                                    <li><a href="http://localhost:3001/jobs">web</a></li>
+                                    <li><a href="http://localhost:3001/jobs">arch</a></li>
+                                    <li><a href="http://localhost:3001/jobs">general labor</a></li>
+                                    <li><a href="http://localhost:3001/jobs">wholesale</a></li>
+                                    <li><a href="http://localhost:3001/jobs">fitness</a></li>
 
                                 </ul>
                                 {/* <JobContainer /> */}
