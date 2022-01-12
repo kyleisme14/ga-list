@@ -1,4 +1,4 @@
-# MERN Authentication Frontend
+# GA-LIST Frontend
 
 | Components | Links to Code | Description |
 | --- | --- | --- |
