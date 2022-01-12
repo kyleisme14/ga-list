@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './JobContainer.css';
 import Job from './Job';
-//import { Redirect } from 'react-router-dom'
+
 
 
 
@@ -48,7 +48,6 @@ class JobContainer extends Component {
 
         return display;
     }
-
 
 
     render() {
