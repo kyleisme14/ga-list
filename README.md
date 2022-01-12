@@ -11,7 +11,7 @@
 | `Post Form`| [`PostForm`](https://github.com/kyleisme14/ga-list/blob/main/src/components/PostForm.js) | A component that allows posting to the database. |
 | `Jobs`| [`JobsContainer`](https://github.com/kyleisme14/ga-list/blob/main/src/components/JobContainer.js) | A component displays the jobs from the database. |
 | `Footer`| [`Footer`](https://github.com/SEI-1025/mern-authentication-frontend/blob/main/docs/other-components.md#footer) | A footer that goes on each component |
-| `Welcome`| [`Welcome`](https://github.com/SEI-1025/mern-authentication-frontend/blob/main/docs/other-components.md#welcome) | A welcome page for the user |
+| `HomePage`| [`HomePage`](https://github.com/kyleisme14/ga-list/blob/main/src/components/HomePage.js) | A welcome page for the user |
 
 ### `App` Component
 
@@ -29,12 +29,18 @@ import './App.css';
 
 // Components
 import Signup from './components/Signup';
-import About from './components/About';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
 import Profile from './components/Profile';
-import Welcome from './components/Welcome';
+import Sale from "./components/Sale";
+import SaleContainer from "./components/SaleContainer";
+import Job from "./components/Job";
+import JobContainer from "./components/JobContainer";
+import HomePage from "./components/HomePage";
+import JobPostForm from "./components/PostForm";
+import SalePostForm from "./components/SalePostForm";
+import ForumPostForm from "./components/ForumPostForm";
 ```
 
 ### `useState` inside `App`
@@ -102,25 +108,31 @@ const handleLogout = () => {
 ### `return` of `App`
 
 ```jsx
-return (
-<div className="App">
-    <h1>MERN Authentication</h1>
-    <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
-    <div className="container mt-5">
+  return (
+    <div className="App">
+      <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
+      <div className="container mt-5">
         <Switch>
-            <Route path='/signup' component={Signup} />
-            <Route 
+          <Route path='/signup' component={Signup} />
+          <Route
             path="/login"
-            render={(props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>}
-            />
-            <PrivateRoute path="/profile" component={Profile} user={currentUser} handleLogout={handleLogout} />
-            <Route exact path="/" component={Welcome} />
-            <Route path="/about" component={About} />
+            render={(props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} />}
+          />
+          <PrivateRoute path="/profile" component={Profile} user={currentUser} handleLogout={handleLogout} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/sales" component={SaleContainer} />
+          <Route path="/jobs" component={JobContainer} />
+          <Route path="/jobs/:id" element={<Job />} />
+          <Route path="/sales/:id" element={< Sale />} />
+          <Route path="/jobpostform" component={JobPostForm} />
+          <Route path="/salepostform" component={SalePostForm} />
+          <Route path="/forumpostform" component={ForumPostForm} />
         </Switch>
+      </div>
+      <Footer />
     </div>
-    <Footer />
-</div>
-);
+  );
+}
 ```
 
 ### Finished
@@ -137,33 +149,39 @@ import './App.css';
 
 // Components
 import Signup from './components/Signup';
-import About from './components/About';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
 import Profile from './components/Profile';
-import Welcome from './components/Welcome';
+import Sale from "./components/Sale";
+import SaleContainer from "./components/SaleContainer";
+import Job from "./components/Job";
+import JobContainer from "./components/JobContainer";
+import HomePage from "./components/HomePage";
+import JobPostForm from "./components/PostForm";
+import SalePostForm from "./components/SalePostForm";
+import ForumPostForm from "./components/ForumPostForm";
 
-const PrivateRoute = ({ component: Component, ...rest}) => {
+const PrivateRoute = ({ component: Component, ...rest }) => {
   let token = localStorage.getItem('jwtToken');
-  console.log('===> Hitting a Private Route');
+  // console.log('===> Hitting a Private Route');
   return <Route {...rest} render={(props) => {
-    return token ? <Component {...rest} {...props} /> : <Redirect to="/login"/>
+    return token ? <Component {...rest} {...props} /> : <Redirect to="/login" />
   }} />
 }
+
 
 function App() {
   // Set state values
   const [currentUser, setCurrentUser] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(true);
 
- 
   useEffect(() => {
     let token;
 
     if (!localStorage.getItem('jwtToken')) {
       setIsAuthenticated(false);
-      console.log('====> Authenticated is now FALSE');
+      // console.log('====> Authenticated is now FALSE');
     } else {
       token = jwt_decode(localStorage.getItem('jwtToken'));
       setAuthToken(localStorage.getItem('jwtToken'));
@@ -172,7 +190,7 @@ function App() {
   }, []);
 
   const nowCurrentUser = (userData) => {
-    console.log('===> nowCurrent is here.');
+    // console.log('===> nowCurrentUser is here.');
     setCurrentUser(userData);
     setIsAuthenticated(true);
   }
@@ -192,13 +210,19 @@ function App() {
       <div className="container mt-5">
         <Switch>
           <Route path='/signup' component={Signup} />
-          <Route 
+          <Route
             path="/login"
-            render={(props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>}
+            render={(props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} />}
           />
           <PrivateRoute path="/profile" component={Profile} user={currentUser} handleLogout={handleLogout} />
-          <Route exact path="/" component={Welcome} />
-          <Route path="/about" component={About} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/sales" component={SaleContainer} />
+          <Route path="/jobs" component={JobContainer} />
+          <Route path="/jobs/:id" element={<Job />} />
+          <Route path="/sales/:id" element={< Sale />} />
+          <Route path="/jobpostform" component={JobPostForm} />
+          <Route path="/salepostform" component={SalePostForm} />
+          <Route path="/forumpostform" component={ForumPostForm} />
         </Switch>
       </div>
       <Footer />
@@ -207,4 +231,5 @@ function App() {
 }
 
 export default App;
+
 ```
