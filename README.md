@@ -31,10 +31,14 @@ This was built using the MERN stack.
 <!-- ## A couple paragraphs about the general approach you took -->
 
 
-<!-- ## Installation instructions for any dependencies -->
+
+## ERD & WIREFRAME
 
 
-<!-- ## ERD & WIREFRAME -->
+![Wireframe HomePage](./img/wireframehome.png)
+![Wireframe Sales](./img/salespagewire.png)
+![ERD](./img/crud.png)
+![CRUD](./img/cruderd.png/)
 
 
 ## USER STORIES

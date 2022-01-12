@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./HomePage.css";
 import SaleContainer from "./SaleContainer";
+import SaleDisplay from "./SaleDisplay";
 import JobContainer from "./JobContainer";
 import { Link } from "react-router-dom";
 
@@ -63,7 +64,7 @@ class HomePage extends Component {
                                         <h2>For Sale</h2>
                                     </Link></div>
                                 <div>
-                                    <SaleContainer />
+                                    <SaleDisplay />
                                 </div>
                             </div>
 
