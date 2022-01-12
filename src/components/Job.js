@@ -7,21 +7,13 @@ class Job extends Component {
 
   }
 
-  addJob() {
-    <Link to='/postform'></Link>
-  }
+
 
   render() {
     return (
 
 
       <div>
-        <div>
-
-          <Link to="/postform">
-            <h3>Create a new job</h3></Link>
-        </div>
-
 
         <h3>Title:</h3>
         {this.props.title}
