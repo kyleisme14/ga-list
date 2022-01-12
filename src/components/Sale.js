@@ -1,15 +1,43 @@
-import "./Sale.css";
-import { useParams } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import { Redirect } from 'react-router-dom'
 
-const Sale = () => {
-  const { id } = useParams();
+class Sale extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div className="Sale">
-      <h2>Sale Page - { id }</h2>
-    </div>
-  )
+  }
+
+
+  render() {
+    return (
+
+      <div>
+
+        <div class="tile is-parent is-shady">
+          <article class="tile is-child notification is-white">
+            <p class="title">Title:<br />{this.props.title}</p>
+            <p class="subtitle">Price:{this.props.price}</p>
+            <div class="content">
+              <p class="subtitle">Description:<br />{this.props.description}</p>
+              <p>Contact info: {this.props.contact_info}</p>
+            </div>
+            <div>
+              <p>Location: {this.props.location}</p>
+            </div>
+            <div>
+
+
+
+            </div>
+
+          </article>
+        </div>
+
+      </div>
+    )
+  }
+
 }
-
 
 export default Sale;

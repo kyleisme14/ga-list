@@ -1,86 +1,76 @@
-import React, { useState } from "react";
-import "./SaleContainer.css";
-import {
-    BrowserRouter as Router,
-    Link,
-    Route,
-    Routes,
-    useParams
-} from "react-router-dom";
+import React, { Component } from 'react';
+import axios from 'axios';
+import './SaleContainer.css';
+import Sale from './Sale';
 
+class SaleContainer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: []
+        };
+    }
 
+<<<<<<< HEAD
 const SaleContainer = () => {
     
+=======
+    componentDidMount() {
+        axios.get('http://localhost:3000/sales')
+            .then((response) => {
+                console.log(response.data);
+                this.setState({
+                    data: response.data.salesArray,
+                });
+            })
+            .catch((error) => {
+                console.log('problem with api', error);
+            })
+    }
+
+>>>>>>> 855d9bef950f8043569188bd5e7fbe1024508dec
 
 
-    return (
 
+<<<<<<< HEAD
             <div className="sale-container">
 
+=======
+
+    displaySales() {
+        const display = this.state.data.map((a, idx) => {
+            return <Sale
+                key={idx}
+                title={a.title}
+                description={a.description}
+                price={a.price}
+                contact_info={a.contact_info}
+                location={a.location}
+                image_url={a.image_url}
+
+
+
+            />
+        });
+
+        return display;
+    }
+
+
+    render() {
+        return (
+            <div>
+
+                {this.displaySales()}
+
+>>>>>>> 855d9bef950f8043569188bd5e7fbe1024508dec
             </div>
-    )
+        )
+    }
+
+
 
 }
 
-
-// const displaySales = data.map((a, idx) => {
-//     return (
-//         <Sale
-//             key={idx}
-//             title={a.title}
-//             description={a.description}
-//             price={a.price}
-//             location={a.location}
-//             imageURL={a.imageURL}
-//         />
-//     );
-// });
-
-// class SaleContainer extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             data: []
-//         };
-//     }
-
-//     componentDidMount() {
-//         axios.get('OUR SALE API GOES HERE')
-//             .then((response) => {
-//                 console.log(response.data);
-//                 this.setState({
-//                     data: response.data.top
-//                 })
-//             })
-//             .catch((error) => {
-//                 console.log('error hitting api', error);
-//             })
-//     }
-
-//     displaySales() {
-//         const display = this.state.data.map((a, idx) => {
-//             return <Sale
-//                 key={idx}
-//                 title={a.title}
-//                 description={a.description}
-//                 price={a.price}
-//                 location={a.location}
-//                 imageURL={a.imageURL}
-//             />
-//         });
-
-//         return display;
-//     }
-
-
-//     render() {
-//         return (
-//             <div>
-//                 {this.displaySales()}
-//             </div>
-
-//         );
-//     }
-// }
 
 export default SaleContainer;

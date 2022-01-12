@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { Redirect } from 'react-router-dom'
+
 
 class Job extends Component {
   constructor(props) {
@@ -7,7 +9,11 @@ class Job extends Component {
 
   }
 
-
+  addJob = () => {
+    this.setState({
+      redirect: true
+    })
+  }
 
   render() {
     return (
@@ -24,6 +30,11 @@ class Job extends Component {
             </div>
             <div>
               <p>Location: {this.props.location}</p>
+            </div>
+            <div>
+              <button onClick={this.addJob}>Edit</button>
+              {/* {this.state.redirect && <Redirect to="/jobpostform" />} */}
+
             </div>
 
           </article>
