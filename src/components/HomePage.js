@@ -73,30 +73,30 @@ class HomePage extends Component {
                                     <h4></h4>
                                     <ul id="container2">
                                         <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">arts</a></li>
-                                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">activities</a></li>
-                                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">classes</a></li>
-                                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">general</a></li>
-                                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">groups</a></li>
-                                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">housing</a></li>
+                                        <li><a href="https://forums.craigslist.org/?areaID=1&forumID=42">activities</a></li>
+                                        <li><a href="https://forums.craigslist.org/?areaID=1&forumID=20">politics</a></li>
+                                        <li><a href="https://forums.craigslist.org/?areaID=1&forumID=73">general</a></li>
+                                        <li><a href="https://forums.craigslist.org/?areaID=1&forumID=32">sport</a></li>
+                                        <li><a href="https://forums.craigslist.org/?areaID=1&forumID=6">housing</a></li>
                                         <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">help</a></li>
-                                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">missed connections</a></li>
-                                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">pets</a></li>
-                                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">gigs</a></li>
+                                        <li><a href="https://forums.craigslist.org/?areaID=1&forumID=76">missed connections</a></li>
+                                        <li><a href="https://forums.craigslist.org/?areaID=1&forumID=26">pets</a></li>
+                                        <li><a href="https://forums.craigslist.org/?areaID=1&forumID=85">gigs</a></li>
 
                                     </ul>
                                 </div>
                             </div>
 
-                           
-                        </div> 
+
+                        </div>
                         <div id="container2item">
-                                <div id="mainbar"><Link to="/jobs">
-                                    <h2>Jobs</h2>
-                                </Link></div>
-                                <div>
-                                    <JobContainer />
-                                </div>
+                            <div id="mainbar"><Link to="/jobs">
+                                <h2>Jobs</h2>
+                            </Link></div>
+                            <div>
+                                <JobContainer />
                             </div>
+                        </div>
                     </div>
 
                     <div id="background" className="column4">
