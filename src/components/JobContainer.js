@@ -42,6 +42,7 @@ class JobContainer extends Component {
                 contact_info={a.contact_info}
                 location={a.location}
 
+
             />
         });
 
