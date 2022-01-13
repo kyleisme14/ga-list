@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "./HomePage.css";
-import SaleContainer from "./SaleContainer";
-import JobContainer from "./JobContainer";
 import { Link } from "react-router-dom";
 
 

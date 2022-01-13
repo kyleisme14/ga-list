@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import { Redirect } from 'react-router-dom'
 
 class Sale extends Component {
   constructor(props) {
